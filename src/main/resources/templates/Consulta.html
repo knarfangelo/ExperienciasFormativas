@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Consultas - TicketPlus</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 100;
+            padding: 48px 20px;
+            background-color: #007bff; /* Color de fondo azul */
+            color: #fff; /* Color de texto blanco */
+            width: 200px; /* Ancho de la barra lateral */
+        }
+        
+        .sidebar-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .nav-link {
+            margin-bottom: 10px;
+            color: #fff; /* Color de texto blanco */
+        }
+
+        .content {
+            margin-left: 200px;
+            padding: 20px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 20px;
+            height: calc(100% / 3);
+        }
+
+        .card-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .card-img-top {
+            max-height: 100%;
+            object-fit: contain;
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-title">TicketPlus</div>
+        <nav class="nav flex-column">
+            <a class="nav-link" href="#consulta-espectaculo">Consulta Espectáculo</a>
+            <a class="nav-link" href="#consulta-boleto">Consulta Boleto</a>
+            <a class="nav-link" href="#reportes">Reportes</a>
+        </nav>
+    </div>
+
+    <div class="content">
+        <div class="card" id="consulta-espectaculo">
+            <img class="card-img-top" src="img/consulta.png" alt="Imagen Consulta Espectáculo">
+            <div class="card-body">
+                <h5 class="card-title">Consulta Espectáculo</h5>
+                <p class="card-text">Descripción de la consulta para espectáculos.</p>
+                <a th:href="@{/espectaculo/listar}" class="btn btn-primary">Ir a Consulta Espectáculo</a>
+            </div>
+        </div>
+
+        <div class="card" id="consulta-boleto">
+            <img class="card-img-top" src="img/consulta.png" alt="Imagen Consulta Boleto">
+            <div class="card-body">
+                <h5 class="card-title">Consulta Boleto</h5>
+                <p class="card-text">Descripción de la consulta para boletos.</p>
+                <a th:href="@{/boleto/listar}" class="btn btn-primary">Ir a Consulta Boleto</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

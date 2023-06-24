@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Mantenimiento de Espectáculo</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <style>
+    body {
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center">Mantenimiento de Espectáculo</h1>
+    <form th:action="@{/espectaculo/guardar}" method="post">
+      <div class="form-group">
+        <label for="espectaculoId">ID del Espectáculo:</label>
+        <input type="text" class="form-control" id="espectaculoId" name="codigo" th:value="${espectaculo.codigo}">
+      </div>
+      <div class="form-group">
+        <label for="direccion">Dirección:</label>
+        <input type="text" class="form-control" id="direccion" name="direccion" th:value="${espectaculo.direccion}">
+      </div>
+      <div class="form-group">
+        <label for="cantante">Cantante:</label>
+        <input type="text" class="form-control" id="cantante" name="cantante" th:value="${espectaculo.cantante}">
+      </div>
+      <div class="form-group">
+        <label for="proveedor">Nombre del Proveedor:</label>
+        <input type="text" class="form-control" id="proveedor" name="nombreProveedor" th:value="${espectaculo.nombreProveedor}">
+      </div>
+      <div class="form-group">
+        <label for="precio">Precio de Derechos de Venta:</label>
+        <input type="text" class="form-control" id="precio" name="precio" th:value="${espectaculo.precio}">
+      </div>
+      <button type="submit" class="btn btn-primary">Guardar</button>
+      <a th:href="@{/espectaculo/listar}" class="btn btn-warning">Listar</a>
+    </form>
+  </div>
+</body>
+</html>

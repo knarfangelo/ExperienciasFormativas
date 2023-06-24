@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lista de Boletos</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center">Lista de Boletos</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID del Boleto</th>
+          <th>Fecha</th>
+          <th>Espectáculo</th>
+          <th>DNI del Cliente</th>
+          <th>Precio</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="boleto : ${boletos}">
+          <td th:text="${boleto.codigo}"></td>
+          <td th:text="${boleto.fecha}"></td>
+          <td th:text="${boleto.espectaculo.direccion}"></td>
+          <td th:text="${boleto.dni}"></td>
+          <td th:text="${boleto.precio}"></td>
+          <td>
+            <a th:href="@{/boleto/editar/{codigo}(codigo=${boleto.codigo})}" class="btn btn-primary">Editar</a>
+            <a th:href="@{/boleto/eliminar/{codigo}(codigo=${boleto.codigo})}" class="btn btn-danger">Eliminar</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

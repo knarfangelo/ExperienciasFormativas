@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TicketPlus</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 100;
+            padding: 48px 20px;
+            background-color: #007bff; /* Color de fondo azul */
+            color: #000; /* Color de texto negro */
+            width: 200px; /* Ancho de la barra lateral */
+        }
+        
+        .sidebar-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #fff; /* Color de texto blanco */
+        }
+        
+        .nav-link {
+            margin-bottom: 10px;
+            color: #000; /* Color de texto negro */
+        }
+        
+        .content {
+            margin-left: 200px;
+            padding: 20px;
+        }
+        
+        .card {
+            height: calc(100vh / 3 - 20px); /* Ajusta la altura para ocupar 1/3 de la ventana */
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .card-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .card-img-top {
+            max-height: 100%;
+            object-fit: contain;
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-title">TicketPlus</div>
+        <nav class="nav flex-column">
+            <a class="nav-link" href="#mantenimiento">Mantenimiento</a>
+            <a class="nav-link" href="#consulta">Consulta</a>
+            <a class="nav-link" href="#reportes">Reportes</a>
+        </nav>
+    </div>
+
+    <div class="content">
+        <div class="card" id="mantenimiento">
+            <img class="card-img-top" src="img/mantenimiento.png" alt="Imagen Mantenimiento">
+            <div class="card-body">
+                <h5 class="card-title">Mantenimiento</h5>
+                <p class="card-text">Descripción del mantenimiento.</p>
+                <a th:href="@{/mantenimiento}" class="btn btn-primary">Ir a Mantenimiento</a>
+            </div>
+        </div>
+
+        <div class="card" id="consulta">
+            <img class="card-img-top" src="img/consulta.png" alt="Imagen Consulta">
+            <div class="card-body">
+                <h5 class="card-title">Consulta</h5>
+                <p class="card-text">Descripción de la consulta.</p>
+                <a th:href="@{/consulta}"  class="btn btn-primary">Ir a Consulta</a>
+            </div>
+        </div>
+
+        <div class="card" id="reportes">
+            <img class="card-img-top" src="img/reportes.png" alt="Imagen Reportes">
+            <div class="card-body">
+                <h5 class="card-title">Reportes</h5>
+                <p class="card-text">Descripción de los reportes.</p>
+                <a th:href="@{/reporte}" class="btn btn-primary">Ir a Reportes</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

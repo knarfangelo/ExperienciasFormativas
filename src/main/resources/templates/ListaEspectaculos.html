@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Lista de Espectáculos</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center">Lista de Espectáculos</h1>
+    <table class="table mt-4">
+      <thead>
+        <tr>
+          <th>ID del Espectáculo</th>
+          <th>Dirección</th>
+          <th>Cantante</th>
+          <th>Nombre del Proveedor</th>
+          <th>Precio de Derechos de Venta</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="espectaculo : ${espectaculos}">
+          <td th:text="${espectaculo.codigo}"></td>
+          <td th:text="${espectaculo.direccion}"></td>
+          <td th:text="${espectaculo.cantante}"></td>
+          <td th:text="${espectaculo.nombreProveedor}"></td>
+          <td th:text="${espectaculo.precio}"></td>
+          <td>
+            <div class="btn-group" role="group">
+              <a th:href="@{/espectaculo/editar/{codigo}(codigo=${espectaculo.codigo})}" class="btn btn-primary btn-sm">Editar</a>
+              <a th:href="@{/espectaculo/eliminar/{codigo}(codigo=${espectaculo.codigo})}" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de eliminar este espectáculo?')">Eliminar</a>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
